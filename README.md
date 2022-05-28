@@ -1,4 +1,4 @@
-## YOLOV5：You Only Look Once目标检测模型在tf2当中的实现（edition v5.0 in Ultralytics）
+## YOLOV5：You Only Look Once目标检测模型在tf2当中的实现（edition v6.1 in Ultralytics）
 ---
 
 ## 目录
@@ -13,9 +13,7 @@
 9. [参考资料 Reference](#Reference)
 
 ## Top News
-**`2022-04`**:**支持多GPU训练，新增各个种类目标数量计算，新增heatmap。**  
-
-**`2022-02`**:**仓库创建，支持不同尺寸模型训练，分别为s、m、l、x版本的yolov5、支持step、cos学习率下降法、支持adam、sgd优化器选择、支持学习率根据batch_size自适应调整、新增图片裁剪。**  
+**`2022-05`**:**仓库创建，支持不同尺寸模型训练，分别为n、s、m、l、x版本的yolov5、支持step、cos学习率下降法、支持adam、sgd优化器选择、支持学习率根据batch_size自适应调整、新增图片裁剪、支持多GPU训练、支持各个种类目标数量计算、支持heatmap、支持EMA。**  
 
 ## 相关仓库
 | 模型 | 路径 |
@@ -25,24 +23,26 @@ Efficientnet-Yolo3 | https://github.com/bubbliiiing/efficientnet-yolo3-tf2
 YoloV4 | https://github.com/bubbliiiing/yolov4-tf2
 YoloV4-tiny | https://github.com/bubbliiiing/yolov4-tiny-tf2
 Mobilenet-Yolov4 | https://github.com/bubbliiiing/mobilenet-yolov4-tf2
-YoloV5 | https://github.com/bubbliiiing/yolov5-tf2
+YoloV5-V5.0 | https://github.com/bubbliiiing/yolov5-tf2
+YoloV5-V6.1 | https://github.com/bubbliiiing/yolov5-v6.1-tf2
 YoloX | https://github.com/bubbliiiing/yolox-tf2
 
 ## 性能情况
 | 训练数据集 | 权值文件名称 | 测试数据集 | 输入图片大小 | mAP 0.5:0.95 | mAP 0.5 |
 | :-----: | :-----: | :------: | :------: | :------: | :-----: |
-| COCO-Train2017 | [yolov5_s.pth](https://github.com/bubbliiiing/yolov5-tf2/releases/download/v1.0/yolov5_s.pth) | COCO-Val2017 | 640x640 | 35.6 | 53.9
-| COCO-Train2017 | [yolov5_m.pth](https://github.com/bubbliiiing/yolov5-tf2/releases/download/v1.0/yolov5_m.pth) | COCO-Val2017 | 640x640 | 43.9 | 62.6 
-| COCO-Train2017 | [yolov5_l.pth](https://github.com/bubbliiiing/yolov5-tf2/releases/download/v1.0/yolov5_l.pth) | COCO-Val2017 | 640x640 | 47.4 | 66.2 
-| COCO-Train2017 | [yolov5_x.pth](https://github.com/bubbliiiing/yolov5-tf2/releases/download/v1.0/yolov5_x.pth) | COCO-Val2017 | 640x640 | 49.4 | 67.9 
+| COCO-Train2017 | [yolov5_n_v6.1.h5](https://github.com/bubbliiiing/yolov5-v6.1-tf2/releases/download/v1.0/yolov5_n_v6.1.h5) | COCO-Val2017 | 640x640 | 28.0 | 45.7
+| COCO-Train2017 | [yolov5_s_v6.1.h5](https://github.com/bubbliiiing/yolov5-v6.1-tf2/releases/download/v1.0/yolov5_s_v6.1.h5) | COCO-Val2017 | 640x640 | 37.5 | 56.8
+| COCO-Train2017 | [yolov5_m_v6.1.h5](https://github.com/bubbliiiing/yolov5-v6.1-tf2/releases/download/v1.0/yolov5_m_v6.1.h5) | COCO-Val2017 | 640x640 | 45.4 | 64.1
+| COCO-Train2017 | [yolov5_l_v6.1.h5](https://github.com/bubbliiiing/yolov5-v6.1-tf2/releases/download/v1.0/yolov5_l_v6.1.h5) | COCO-Val2017 | 640x640 | 49.0 | 67.3
+| COCO-Train2017 | [yolov5_x_v6.1.h5](https://github.com/bubbliiiing/yolov5-v6.1-tf2/releases/download/v1.0/yolov5_x_v6.1.h5) | COCO-Val2017 | 640x640 | 50.7 | 68.9
 
 ## 所需环境
 tensorflow-gpu==2.2.0
 
 ## 文件下载
 训练所需的权值可在百度网盘中下载。  
-链接: https://pan.baidu.com/s/1syE1wLRncUqqpBMc1mVI7A   
-提取码: eq1g  
+链接: https://pan.bai   du.com/s/1_tSJWb6drbsdbuLhuP2LFQ     
+提取码: 9564     
 
 VOC数据集下载地址如下，里面已经包括了训练集、测试集、验证集（与测试集一样），无需再次划分：  
 链接: https://pan.baidu.com/s/19Mw2u_df_nBzsC2lg20fQA    

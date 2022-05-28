@@ -127,7 +127,7 @@ def darknet_body(x, base_channels, base_depth, weight_decay=5e-4):
     x = resblock_body(x, base_channels * 8, base_depth * 3, weight_decay=weight_decay, name = 'backbone.dark4')
     feat2 = x
     # 40, 40, 512 => 20, 20, 1024
-    x = resblock_body(x, base_channels * 16, base_depth, shortcut=False, last=True, weight_decay=weight_decay, name = 'backbone.dark5')
+    x = resblock_body(x, base_channels * 16, base_depth, last=True, weight_decay=weight_decay, name = 'backbone.dark5')
     feat3 = x
     return feat1,feat2,feat3
 

@@ -80,7 +80,7 @@ if __name__ == "__main__":
     #------------------------------------------------------#
     input_shape     = [640, 640]
     #------------------------------------------------------#
-    #   phi             所使用的YoloV5的版本。s、m、l、x
+    #   phi             所使用的YoloV5的版本。n、s、m、l、x
     #------------------------------------------------------#
     phi             = 's'
     #------------------------------------------------------------------#
@@ -316,7 +316,7 @@ if __name__ == "__main__":
     #------------------------------------------------------#
     if True:
         if Freeze_Train:
-            freeze_layers = {'s': 125, 'm': 179, 'l': 234, 'x': 290}[phi]
+            freeze_layers = {'n':118, 's': 118, 'm': 167, 'l': 216, 'x': 265}[phi]
             for i in range(freeze_layers): model_body.layers[i].trainable = False
             print('Freeze the first {} layers of total {} layers.'.format(freeze_layers, len(model_body.layers)))
             
