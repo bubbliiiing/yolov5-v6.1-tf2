@@ -41,7 +41,7 @@ tensorflow-gpu==2.2.0
 
 ## 文件下载
 训练所需的权值可在百度网盘中下载。  
-链接: https://pan.bai   du.com/s/1_tSJWb6drbsdbuLhuP2LFQ     
+链接: https://pan.baidu.com/s/1_tSJWb6drbsdbuLhuP2LFQ     
 提取码: 9564     
 
 VOC数据集下载地址如下，里面已经包括了训练集、测试集、验证集（与测试集一样），无需再次划分：  
